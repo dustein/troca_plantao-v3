@@ -7,13 +7,17 @@ tsconfig: target 2020. rootDir ./src outDir ./dist
 npx tsc
 npm i express
 npm i @types/express -D
-PostgreSQL ativar linux (sudo systemctl start postgresql | sudo -i -u postgres | psql - eduardo lopes) - criei o BD plantao com comandos no terminal postgres
+para o Prisma conforme documentacao, no tsconfig coloquei sourceMap true, "lib": ["ESNext"]
 npm i prisma -D
-npm i @pryima/client
+npm i @prisma/client
 npx prisma init
-npm i uuid
-Configurar schema.prisma criando o model para o BD
-npx prisma migrate dev
+Ja adiantei a instalacao do uuid pra inserir no modelo do ID User - npm i uuid
+
+Configurar schema.prisma para conectar com o mongoDB configurando o .env
+Configurei o model User no schema.prisma
+
+npx prisma migrate dev - ERRO Error: The "mongodb" provider is not supported with this command. For more info see https://www.prisma.io/docs/concepts/database-connectors/mongodb
+
 ver no npx prisma studio que a tabela ja esta pronta
 
 OBS: parando desenvolvimento aqui, vou reiniciar usando o mongoDB para nao juntar muita coisa desconhecida ao mesmo tempo.
